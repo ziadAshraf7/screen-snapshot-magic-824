@@ -31,9 +31,9 @@ export const Route = createFileRoute("/projects/$id")({
 function ProjectDetail() {
   const { project } = Route.useLoaderData();
   const index = projects.findIndex((p) => p.id === project.id);
-  const next = projects[(index + 1) % projects.length];
-  const prev = projects[(index - 1 + projects.length) % projects.length];
-  const transformation = transformations[index % transformations.length];
+  const next = projects[(index + 1) % projects.length]!;
+  const prev = projects[(index - 1 + projects.length) % projects.length]!;
+  const transformation = transformations[index % transformations.length]!;
 
   return (
     <>
